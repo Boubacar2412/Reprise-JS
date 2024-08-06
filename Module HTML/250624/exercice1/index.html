@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fan Club de [Votre Sujet]</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Bienvenue au Fan Club de [Votre Sujet]</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#news">Actualités</a></li>
+          <li><a href="#gallery">Galerie</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#comments">Commentaires</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>À propos de [Votre Sujet]</h2>
+        <p class="highlight">[Votre Sujet] est incroyable parce que...</p>
+      </section>
+
+      <section id="news">
+        <h2>Dernières Actualités</h2>
+        <p>Restez à jour avec les dernières nouvelles sur [Votre Sujet].</p>
+      </section>
+
+      <section id="gallery">
+        <h2>Galerie de Photos</h2>
+        <p>Découvrez les images les plus cool de [Votre Sujet].</p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          Pour toute question, veuillez
+          <a href="mailto:contact@fanclub.com">nous contacter</a>.
+        </p>
+      </section>
+
+      <section id="comments">
+        <h2>Commentaires</h2>
+        <form id="comment-form">
+          <label for="name">Nom :</label>
+          <input type="text" id="name" name="name" required />
+          <label for="message">Message :</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+        <div id="comment-list">
+          <div class="comment">
+            <p class="comment-name">Nom du Fan</p>
+            <p class="comment-message">Ceci est un commentaire de fan.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Fan Club de [Votre Sujet]. Tous droits réservés.</p>
+    </footer>
+  </body>
+</html>

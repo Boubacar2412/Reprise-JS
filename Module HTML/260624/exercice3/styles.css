@@ -1,0 +1,27 @@
+/* Styles pour les liens non visités */
+a:link {
+  color: #1e90ff; /* Bleu */
+  text-decoration: none;
+  font-weight: normal;
+}
+
+/* Styles pour les liens visités */
+a:visited {
+  color: #551a8b; /* Violet */
+  text-decoration: none;
+  font-weight: normal;
+}
+
+/* Styles des liens survolés */
+a:hover {
+  color: #ff4500; /* Rouge orangé */
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Styles des liens actifs */
+a:active {
+  background-color: #000000; /* Fond noir */
+  color: #ffffff; /* Texte blanc */
+  font-style: italic;
+}

@@ -1,0 +1,45 @@
+/* Couleur du texte du titre principal */
+h1 {
+  color: #1098ad;
+}
+
+/* Couleur de fond du corps */
+body {
+  background-color: #f7f7f7;
+}
+
+/* Couleur de fond de l'en-tête */
+header {
+  background-color: #e0e0e0;
+}
+
+/* Couleur des liens de navigation */
+nav a {
+  color: #00ffff;
+}
+
+/* Couleur du texte des sections */
+section p {
+  color: #444444;
+}
+
+/* Bordures des sections */
+section {
+  border-top: 2px solid #1098ad;
+  border-bottom: 2px solid #1098ad;
+}
+
+/* Couleur de fond des sections */
+section {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Couleur de l'aside */
+aside {
+  background-color: #e0e0e0;
+}
+
+/* Couleur des liens au survol */
+nav a:hover {
+  color: #1098ad;
+}

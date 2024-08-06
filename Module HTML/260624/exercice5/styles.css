@@ -1,0 +1,42 @@
+/* Appliquer des styles globaux au body */
+body {
+  color: #333;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Ajouter un fond coloré et centrer le texte du header */
+header {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Ajouter des marges et du padding à la section principale */
+main section {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+/* Spécifier un style unique pour les éléments avec la classe highlight */
+.highlight {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* Ajouter des styles à l'encart */
+aside {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-left: 5px solid #ccc;
+}
+
+/* Ajouter des styles au footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}

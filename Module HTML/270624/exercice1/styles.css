@@ -1,0 +1,27 @@
+/* Style de base pour toutes les boîtes */
+.box {
+  border: 2px solid black; /* Bordure solide de 2px de couleur noire */
+  padding: 20px; /* Padding de 20px */
+  margin: 15px; /* Marge de 15px */
+}
+
+/* Styles spécifiques pour la boîte avec l'ID "box1" */
+#box1 {
+  border: 5px dotted blue; /* Bordure de 5px, en pointillés, de couleur bleue */
+  padding: 30px; /* Padding de 30px */
+  margin: 20px; /* Marge de 20px */
+}
+
+/* Styles spécifiques pour la boîte avec l'ID "box2" */
+#box2 {
+  border: 3px dashed red; /* Bordure de 3px, en tirets, de couleur rouge */
+  padding: 10px; /* Padding de 10px */
+  margin: 25px; /* Marge de 25px */
+}
+
+/* Styles spécifiques pour la boîte avec l'ID "box3" */
+#box3 {
+  border: 4px solid green; /* Bordure de 4px, solide, de couleur verte */
+  padding: 15px; /* Padding de 15px */
+  margin: 10px; /* Marge de 10px */
+}

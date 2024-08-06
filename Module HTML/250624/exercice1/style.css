@@ -1,0 +1,123 @@
+body {
+  font-family: "Arial", serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+  color: lightblue;
+}
+
+h1 {
+  font-size: 36px;
+  color: darkblue;
+}
+
+h2 {
+  font-size: 28px;
+  color: #333;
+}
+
+p {
+  color: #555;
+  font-size: 16px;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+#gallery img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #333;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.5;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+#comment-form {
+  margin: 20px 0;
+}
+
+#comment-form label {
+  font-weight: bold;
+}
+
+#comment-form input,
+#comment-form textarea {
+  width: 100%;
+  padding: 5px;
+  margin: 10px 0;
+}
+
+#comment-form button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+#comment-form button:hover {
+  background-color: #555;
+}
+.comment {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+}
+
+.comment-name {
+  font-weight: bold;
+}
+
+.comment-message {
+  color: #555;
+}

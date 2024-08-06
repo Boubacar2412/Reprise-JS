@@ -1,0 +1,24 @@
+/* Sélecteur ID */
+#main-title {
+  color: red;
+}
+
+/* Sélecteur de classe */
+.title {
+  color: blue;
+}
+
+/* Sélecteur d'élément */
+h1 {
+  color: green;
+}
+
+/* Utilisation du mot-clé !important */
+.highlighted {
+  color: yellow !important;
+}
+
+/* Sélecteur de classe descendant */
+.container p {
+  color: gray;
+}
