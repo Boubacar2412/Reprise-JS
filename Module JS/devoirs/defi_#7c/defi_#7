@@ -1,0 +1,84 @@
+# 🔥 Défi de codage #7 : Gestion d'un Inventaire de Magasin
+
+**Contexte :**
+Vous travaillez sur une application simple de gestion d'inventaire pour un magasin. Vous devez implémenter plusieurs fonctionnalités qui permettront d'ajouter des articles à l'inventaire, de vérifier leur disponibilité, et de calculer leur prix total en fonction de leur quantité.
+
+**Objectifs :**
+Dans ce challenge, vous allez combiner les notions de fonctions, tableaux, conditions (if/else ou opérateur ternaire), et de coercion/conversion de types en JavaScript.
+
+**Instructions :**
+
+1. **Créer l'inventaire :**
+
+   - Créez un tableau `inventory` qui contiendra des objets représentant les articles du magasin. Chaque objet doit avoir les propriétés suivantes :
+     - `name`: Le nom de l'article (string).
+     - `price`: Le prix unitaire de l'article (number).
+     - `quantity`: La quantité de l'article en stock (number).
+
+   **Exemple :**
+
+   ```jsx
+   const inventory = [
+     { name: "apple", price: 1.2, quantity: 10 },
+     { name: "banana", price: 0.8, quantity: 5 },
+     { name: "orange", price: 1.5, quantity: 8 },
+   ];
+   ```
+
+2. **Ajouter un article :**
+
+   - Implémentez une fonction `addItem(name, price, quantity)` qui ajoute un nouvel article à l'inventaire.
+   - Vérifiez si un article avec le même nom existe déjà dans l'inventaire. Si oui, utilisez un `if/else` pour soit ajouter la quantité à l'article existant, soit afficher un message d'erreur.
+
+   **Exemple :**
+
+   ```jsx
+   addItem("apple", 1.2, 5); // Augmente la quantité de "apple" à 15
+   addItem("grape", 2.0, 10); // Ajoute "grape" à l'inventaire
+   ```
+
+3. **Vérifier la disponibilité :**
+
+   - Créez une fonction `checkAvailability(itemName, requestedQuantity)` qui prend en paramètres le nom d'un article et la quantité demandée. Cette fonction doit vérifier si la quantité demandée est disponible en stock.
+   - Utilisez une condition ternaire pour retourner soit `"Disponible"`, soit `"Stock insuffisant"`.
+
+   **Exemple :**
+
+   ```jsx
+   console.log(checkAvailability("banana", 3)); // "Disponible"
+   console.log(checkAvailability("banana", 10)); // "Stock insuffisant"
+   ```
+
+4. **Calculer le prix total :**
+
+   - Implémentez une fonction `calculateTotalPrice(itemName, requestedQuantity)` qui calcule le prix total pour une quantité donnée d'un article. Utilisez un `if/else` pour vérifier si l'article est disponible en quantité suffisante. Si oui, retournez le prix total ; sinon, retournez `"Stock insuffisant"`.
+
+   **Exemple :**
+
+   ```jsx
+   console.log(calculateTotalPrice("orange", 3)); // 4.5
+   console.log(calculateTotalPrice("orange", 10)); // "Stock insuffisant"
+   ```
+
+5. **Conversion et coercion de types :**
+
+   - Modifiez la fonction `calculateTotalPrice` pour accepter également les quantités sous forme de chaîne de caractères (string). Utilisez la coercion ou la conversion de types pour vous assurer que la quantité est traitée correctement comme un nombre dans vos calculs.
+
+   **Exemple :**
+
+   ```jsx
+   console.log(calculateTotalPrice("banana", "2")); // 1.6
+   console.log(calculateTotalPrice("banana", "five")); // "Quantité invalide"
+   ```
+
+**Bonus :**
+
+- Implémentez une fonction `removeItem(itemName, quantity)` qui retire une certaine quantité d'un article de l'inventaire. Si la quantité à retirer est supérieure à celle disponible, affichez un message d'erreur.
+
+**Critères d'évaluation :**
+
+- Respect des consignes (création des fonctions et respect de la logique demandée).
+- Bonne utilisation des concepts de tableaux, fonctions, conditions, et coercion/conversion de types.
+- Robustesse du code face aux cas d'erreur (par exemple, tentatives d'ajout ou de retrait d'articles non existants ou en quantité insuffisante).
+
+Bonne chance à vos étudiants ! Ce challenge les aidera à consolider leur compréhension des bases de JavaScript dans un contexte pratique.
