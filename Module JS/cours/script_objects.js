@@ -30,3 +30,46 @@ if (obj.age) {
 }
 
 obj;
+
+const amadou2 = {
+  firstName: "Amadou",
+  lastName: "Ly",
+  birthYear: 1991,
+  age: 2024 - 1998,
+  job: "Teacher",
+  students: ["Fadima", "Alpha", "Oumar", "Boubacar"],
+  hasDriverLicence: true,
+  // calcAge: function () {
+  //   console.log(this);
+  //   return 2024 - this.birthYear;
+  // },
+
+  calcAge() {
+    return 2024 - this.birthYear;
+  },
+};
+
+amadou2.calcAge();
+amadou2["calcAge"]();
+amadou2["students"];
+
+console.log("amadou.calcAge : ", amadou2.calcAge());
+
+const firstName = "Oumar";
+const age = 25;
+const job = "DEV";
+
+const person = {
+  firstName: firstName,
+  age: age,
+  job: job,
+};
+
+const person2 = {
+  firstName,
+  age,
+  job,
+};
+
+console.log(person);
+console.log(person2);
