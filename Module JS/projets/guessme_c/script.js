@@ -37,12 +37,20 @@ check.addEventListener("click", function () {
   } else if (guess === secretNumber) {
     message.textContent = "🎉 Nombre correct!";
   } else if (guess > secretNumber) {
-    message.textContent = "📉 Trop grand !";
-    score--;
-    document.querySelector(".score").textContent = score;
+    if (score > 0) {
+      message.textContent = "📉 Trop grand !";
+      score--;
+      document.querySelector(".score").textContent = score;
+    } else {
+      message.textContent = "💥 Vous avez perdu !";
+    }
   } else if (guess < secretNumber) {
-    message.textContent = "📈 Trop petit !";
-    score--;
-    document.querySelector(".score").textContent = score;
+    if (score > 0) {
+      message.textContent = "📈 Trop petit !";
+      score--;
+      document.querySelector(".score").textContent = score;
+    } else {
+      message.textContent = "💥 Vous avez perdu !";
+    }
   }
 });
