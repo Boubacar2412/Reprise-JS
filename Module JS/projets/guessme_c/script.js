@@ -22,16 +22,27 @@
 
 //   handler();
 
-const number = Math.trunc(Math.random() * 20 + 1);
-
-document.querySelector(".number").textContent = number;
+const secretNumber = Math.trunc(Math.random() * 20 + 1);
+let score = 20;
+document.querySelector(".number").textContent = secretNumber;
 
 const message = document.querySelector(".message");
 const check = document.querySelector(".check");
 
 check.addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
-  if (!guess && guess !== 0) {
+
+  if (!guess) {
     message.textContent = "Pas de nombre 🛑";
+  } else if (guess === secretNumber) {
+    message.textContent = "🎉 Nombre correct!";
+  } else if (guess > secretNumber) {
+    message.textContent = "📉 Trop grand !";
+    score--;
+    document.querySelector(".score").textContent = score;
+  } else if (guess < secretNumber) {
+    message.textContent = "📈 Trop petit !";
+    score--;
+    document.querySelector(".score").textContent = score;
   }
 });
