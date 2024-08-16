@@ -29,6 +29,16 @@ let hightScore = 0;
 const message = document.querySelector(".message");
 const check = document.querySelector(".check");
 
+const updateScore = function (message) {
+  if (score > 0) {
+    message.textContent = message;
+    score--;
+    document.querySelector(".score").textContent = score;
+  } else {
+    message.textContent = "💥 Vous avez perdu !";
+  }
+};
+
 check.addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
 
@@ -47,24 +57,9 @@ check.addEventListener("click", function () {
       hightScore = score;
       document.querySelector(".highscore").textContent = hightScore;
     }
-    // guess is too high
-  } else if (guess > secretNumber) {
-    if (score > 0) {
-      message.textContent = "📉 Trop grand !";
-      score--;
-      document.querySelector(".score").textContent = score;
-    } else {
-      message.textContent = "💥 Vous avez perdu !";
-    }
-    //guess is too low
-  } else if (guess < secretNumber) {
-    if (score > 0) {
-      message.textContent = "📈 Trop petit !";
-      score--;
-      document.querySelector(".score").textContent = score;
-    } else {
-      message.textContent = "💥 Vous avez perdu !";
-    }
+    // guess is BAD
+  } else if (guess !== secretNumber) {
+    updateScore(guess > secretNumber ? "📉 Trop grand !" : "📈 Trop petit !");
   }
 });
 
