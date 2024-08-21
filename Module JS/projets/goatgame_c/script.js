@@ -83,3 +83,9 @@ btnHold.addEventListener('click', function () {
     switchPlayer();
   }
 });
+
+btnNew.addEventListener('click', function () {
+  scores = [0, 0];
+
+  0;
+});
