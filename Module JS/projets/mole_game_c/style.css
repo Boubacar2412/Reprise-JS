@@ -1,0 +1,96 @@
+/* Importation des polices Google */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Raleway:wght@400;700&display=swap");
+
+/* Réinitialisation de base pour supprimer les marges et les paddings de tous les éléments */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Arrière-plan coloré et alignement centré avec des couleurs terreuses */
+body {
+  background-color: #e1c699; /* Terre cuite */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Ubuntu", sans-serif; /* Utilisation d'une police plus ronde et conviviale */
+}
+
+/* Conteneur qui contient tout le jeu */
+.game-container {
+  text-align: center;
+  background-color: #f8e9c1; /* Couleur sable */
+  border: 5px solid #a0522d; /* Bordure brun terre */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre douce */
+}
+
+/* Style pour le tableau de score */
+.score-board {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #3b3a36; /* Gris foncé */
+  font-family: "Roboto", sans-serif; /* Police simple et lisible */
+}
+
+/* Disposition de la grille pour les trous */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 15px;
+  margin-bottom: 1.5rem;
+}
+
+/* Style pour chaque trou */
+.hole {
+  width: 100px;
+  height: 100px;
+  background-color: #8b5e3c; /* Couleur brun terre */
+  border-radius: 50%;
+  position: relative;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Cache la taupe par défaut */
+.mole.hidden {
+  display: none;
+}
+
+/* Affiche la taupe lorsqu'elle est active */
+.mole {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+/* Bouton pour démarrer le jeu avec un style plus vibrant */
+#start-btn {
+  padding: 12px 25px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  background-color: #d2691e; /* Couleur cuivre */
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: "Ubuntu", sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+#start-btn:hover {
+  background-color: #8b4513; /* Couleur terre brûlée */
+}
+
+/* Style pour l'affichage du minuteur */
+.timer {
+  font-size: 1.8rem;
+  color: #3b3a36; /* Gris foncé */
+  font-family: "Roboto", sans-serif;
+}
