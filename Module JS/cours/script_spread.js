@@ -79,12 +79,12 @@ console.log(...str, " ", "L");
 // console.log(`${..str}`)
 
 // ARGUMENTS
-// const ingredients = [
-//   "Farine/Pate Pizza",
-//   "Sauce Tomate Mozzarela",
-//   "Viande Hachee",
-// ];
-// heroescoffee.orderPizza(...ingredients);
+const ingredients = [
+  "Farine/Pate Pizza",
+  "Sauce Tomate Mozzarela",
+  "Viande Hachee",
+];
+heroescoffee.orderPizza(...ingredients);
 
 // const ingredients = [
 //   prompt("Chooze your ingredients for the pizza ! Ingredient 1"),
