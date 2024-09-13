@@ -1,26 +1,4 @@
-"use strict";
-
 const weekdays = ["mon", "tue", "wed", "thursday", "fri", "sat", "sun"];
-
-const char = [
-  ["ridon", "roues", "pedales"],
-  ["volant", "roues", "moteur"],
-  ["manivelle", "ailes", "moteur"],
-];
-
-const charMachines = [];
-
-for (const [i, machine] of char.entries()) {
-  const charObj = {};
-
-  machine.forEach((char) => {
-    charObj[char] = "uninitialized";
-  });
-
-  charMachines[i] = charObj;
-}
-
-charMachines;
 
 const openinHours = {
   [weekdays[3]]: {
@@ -36,9 +14,6 @@ const openinHours = {
     close: 24,
   },
 };
-
-openinHours;
-
 const heroescoffee = {
   [openinHours]: "Heroes Coffee",
   location: "Kipe Plaza, Ratoma Conakry Guinee",
@@ -65,25 +40,48 @@ const heroescoffee = {
     console.log(`Here is your delicious Pizza with ${ing1}, ${ing2}, ${ing3}`),
 };
 
-const menu = [...heroescoffee.mainMenu, ...heroescoffee.startMenu];
+const ordersSet = new Set([
+  "Pizza",
+  "Pasta",
+  "Poulet",
+  "Pizza",
+  "Athieke",
+  "Garba",
+]);
 
-for (const item of menu) console.log(item);
+console.log(ordersSet.size);
+console.log(ordersSet);
 
-for (const [i, el] of menu.entries()) {
-  console.log(i);
-  console.log(el);
+console.log(new Set("Amadou Ousmane Diallo"));
+
+console.log(ordersSet.has("Pizza")); // equivalent a include sur les Array
+console.log(ordersSet.has("Couscous"));
+
+ordersSet.add("Choukouya");
+ordersSet.add("Choukouya");
+
+console.log(ordersSet);
+
+ordersSet.delete("Garba");
+console.log(ordersSet);
+// ordersSet.clear();
+console.log(ordersSet);
+
+for (const order of ordersSet) {
+  console.log(order);
 }
 
-const students = [
-  { name: "Isma", age: 19 },
-  { name: "Ous", age: 18 },
-  { name: "Mmad", age: 17 },
-  { name: "Ous", age: 18 },
-  { name: "Fatou", age: 18 },
-];
+// Exemple
+let staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Delivery guy"];
+const staffUnique = new Set(staff);
 
-for (const student of students.entries()) {
-  console.log(student);
-}
+staffUnique;
+staff = [...staffUnique];
 
-console.log(heroescoffee);
+staff;
+
+console.log(
+  new Set(["Waiter", "Chef", "Waiter", "Manager", "Chef", "Delivery guy"]).size
+);
+
+console.log(new Set("Je suis tres content d'etres la avec vous").size);
