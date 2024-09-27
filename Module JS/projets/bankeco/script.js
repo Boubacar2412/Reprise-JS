@@ -75,49 +75,46 @@ const currencies = new Map([
 
 /////////////////////////////////////////////////
 
-let arr = ['a', 'b', 'c', 'd', 'e'];
+// let arr = ['a', 'b', 'c', 'd', 'e'];
+// console.log(arr.slice(2));
+// console.log(arr.slice(2, 4).length);
+// console.log(arr.slice(-2));
+// console.log(arr.slice(1, -2));
+// console.log(arr.slice().push('f'));
+// console.log([...arr]);
+// console.log('==SPLICE==');
+// console.log(arr.splice(2));
+// console.log(arr);
+// console.log(arr.splice(2, 4).length);
+// console.log(arr.splice(-2));
+// console.log(arr.splice(1, -2));
+// arr.splice(-1);
+// arr.pop();
 
-console.log(arr.slice(2));
-console.log(arr.slice(2, 4).length);
-console.log(arr.slice(-2));
-console.log(arr.slice(1, -2));
-console.log(arr.slice().push('f'));
-console.log([...arr]);
+// console.log('==REVERSE==');
+// const arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-console.log('==SPLICE==');
+// console.log(arr2.reverse());
+// console.log(arr2);
 
-console.log(arr.splice(2));
-console.log(arr);
-console.log(arr.splice(2, 4).length);
-console.log(arr.splice(-2));
-console.log(arr.splice(1, -2));
-arr.splice(-1);
-arr.pop();
+// console.log('==CONCAT==');
+// const numbers = arr2.reverse().concat([10, 11, 12]);
+// console.log(numbers);
 
-console.log('==REVERSE==');
-const arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// console.log(numbers.join());
+// console.log(numbers.join(' is less than ').split(' is less than '));
 
-console.log(arr2.reverse());
-console.log(arr2);
+// const arr3 = [23, 11, 45];
+// console.log(arr3[0]);
+// console.log(arr3[arr3.length - 1]);
+// console.log(arr3.slice(-1));
 
-console.log('==CONCAT==');
-const numbers = arr2.reverse().concat([10, 11, 12]);
-console.log(numbers);
+// console.log(arr3.at(-1));
 
-console.log(numbers.join());
-console.log(numbers.join(' is less than ').split(' is less than '));
+// // loops
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-const arr3 = [23, 11, 45];
-console.log(arr3[0]);
-console.log(arr3[arr3.length - 1]);
-console.log(arr3.slice(-1));
-
-console.log(arr3.at(-1));
-
-// loops
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
-movements.forEach((mov, idx, _) => {
-  if (mov > 0) console.log(`You deposited ${mov} GNF`);
-  else console.log(`You whithdrawed ${Math.abs(mov)} GNF`);
-});
+// movements.forEach((mov, idx, _) => {
+//   if (mov > 0) console.log(`You deposited ${mov} GNF`);
+//   else console.log(`You whithdrawed ${Math.abs(mov)} GNF`);
+// });
