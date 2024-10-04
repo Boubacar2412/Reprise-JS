@@ -46,60 +46,66 @@ console.log(allSections);
 
 const allButtons2 = document.getElementsByClassName('btn');
 
-// Creating and inserting elements
-// insertAdjacentHTML
-const message = document.createElement('div');
-message.classList.add('cookie-message');
-// message.textContent = 'We use cookie for improved functionnality and analytics';
-message.innerHTML = `
-We use cookie for improved functionnality and analytics
-<button class="btn btn--close-cookie" >Got it!</button>
-`;
+//Smooth scroll
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
 
-header.append(message);
-header.prepend(message);
+btnScrollTo.addEventListener('click', function (e) {
+  // const s1Coords = section1.getBoundingClientRect();
+  // console.log(s1Coords);
 
-message.style.backgroundColor = '#37383d';
-message.style.width = '120%';
+  // console.log(e.target.getBoundingClientRect());
+  // console.log('currentScroll (X/Y)', window.pageXOffset, window.pageYOffset);
+  // console.log(
+  //   'height/width wiewport',
+  //   document.documentElement.clientHeight,
+  //   document.documentElement.clientWidth
+  // );
 
-console.log(message.style.width);
+  // window.scrollTo(
+  //   s1Coords.left + window.pageXOffset,
+  //   s1Coords.top + window.pageYOffset
+  // );
 
-console.log(getComputedStyle(message).height);
+  // window.scrollTo({
+  // left: s1Coords.left + window.scrollX,
+  // top: s1Coords.top + window.scrollY,
+  //   behavior: 'smooth',
+  // });
 
-const messageStyleHeight = getComputedStyle(message).height;
-message.style.height = Number.parseFloat(messageStyleHeight) + 40 + 'px';
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
 
-console.log(message.style.height);
+// rgb(255,255,255)
 
-// document.documentElement.style.setProperty('width', 'orange');
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
 
-const logo = document.querySelector('.nav__logo');
-console.log(logo.alt);
-console.log(logo.src);
-console.log(logo.ariaHidden);
-console.log(logo.className);
+console.log(randomColor());
 
-logo.alt = 'Beautiful blue logo';
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('LINK', e.target);
+  console.log('currentTarget', e.currentTarget);
 
-// console.log(logo.designer);
-console.log(logo.getAttribute('designer'));
-console.log(logo.setAttribute('designer', 'ousname'));
-console.log(logo.setAttribute('company', 'ecobank'));
+  // Stop propagation
+  // e.stopPropagation();
+});
 
-console.log(logo.getAttribute('src'));
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('LINKS', e.target);
+  console.log('currentTarget', e.currentTarget);
+});
 
-const link = document.querySelector('.nav__link--btn');
-
-console.log(link.href);
-console.log(link.getAttribute('href'));
-
-// Data attribute
-console.log(logo.dataset.versionNumber);
-
-//classes
-logo.classList.add('a', 'b', 'c');
-logo.classList.remove('a');
-logo.classList.toggle('b');
-logo.classList.contains('b');
-
-console.log(logo.className);
+document.querySelector('.nav').addEventListener(
+  'click',
+  function (e) {
+    this.style.backgroundColor = randomColor();
+    console.log('NAV', e.target);
+    console.log('currentTarget', e.currentTarget);
+  },
+  true
+);
