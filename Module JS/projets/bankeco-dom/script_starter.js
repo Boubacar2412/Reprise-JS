@@ -30,6 +30,35 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+//Smooth scroll
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+
+// Page navigation
+
+// document.querySelectorAll('.nav__link').forEach(function (el) {
+//   el.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     const id = this.getAttribute('href');
+//     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+//   });
+// });
+
+// 1. Add an event listener to a common parent element
+// 2. Determine what element originated the event
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  e.preventDefault();
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
 // Selecting elements
 console.log(document.documentElement);
 console.log(document.head);
@@ -45,67 +74,3 @@ console.log(allButtons);
 console.log(allSections);
 
 const allButtons2 = document.getElementsByClassName('btn');
-
-//Smooth scroll
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
-
-btnScrollTo.addEventListener('click', function (e) {
-  // const s1Coords = section1.getBoundingClientRect();
-  // console.log(s1Coords);
-
-  // console.log(e.target.getBoundingClientRect());
-  // console.log('currentScroll (X/Y)', window.pageXOffset, window.pageYOffset);
-  // console.log(
-  //   'height/width wiewport',
-  //   document.documentElement.clientHeight,
-  //   document.documentElement.clientWidth
-  // );
-
-  // window.scrollTo(
-  //   s1Coords.left + window.pageXOffset,
-  //   s1Coords.top + window.pageYOffset
-  // );
-
-  // window.scrollTo({
-  // left: s1Coords.left + window.scrollX,
-  // top: s1Coords.top + window.scrollY,
-  //   behavior: 'smooth',
-  // });
-
-  section1.scrollIntoView({ behavior: 'smooth' });
-});
-
-// rgb(255,255,255)
-
-const randomInt = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
-const randomColor = () =>
-  `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
-
-console.log(randomColor());
-
-document.querySelector('.nav__link').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor();
-  console.log('LINK', e.target);
-  console.log('currentTarget', e.currentTarget);
-
-  // Stop propagation
-  // e.stopPropagation();
-});
-
-document.querySelector('.nav__links').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor();
-  console.log('LINKS', e.target);
-  console.log('currentTarget', e.currentTarget);
-});
-
-document.querySelector('.nav').addEventListener(
-  'click',
-  function (e) {
-    this.style.backgroundColor = randomColor();
-    console.log('NAV', e.target);
-    console.log('currentTarget', e.currentTarget);
-  },
-  true
-);
