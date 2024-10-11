@@ -66,3 +66,21 @@ Person.prototype.species = "Homo Sapiens";
 console.log(amad.species, oumar.species, conte.species);
 console.log(amad.hasOwnProperty("firstName"));
 console.log(amad.hasOwnProperty("species"));
+
+console.log(amad.__proto__.__proto__.__proto__);
+console.log(Person.prototype.constructor);
+
+const array = [1, 3, 4, 5];
+console.log(array.__proto__.__proto__);
+
+const h1 = document.querySelector("h1");
+
+console.log(h1.__proto__);
+console.log(h1.__proto__.__proto__);
+console.log(h1.__proto__.__proto__.__proto__);
+console.log(h1.__proto__.__proto__.__proto__.__proto__);
+console.log(h1.__proto__.__proto__.__proto__.__proto__.__proto__);
+console.log(h1.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__);
+console.log(
+  h1.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__
+);
