@@ -1,31 +1,49 @@
 "use strict";
 
-const PersonProto = {
-  calcAge() {
-    console.log(2024 - this.birthYear);
-  },
+class Account {
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    this.pin = pin;
+    this.movements = [];
+    this.locale = navigator.language;
 
-  init(fullName, birthYear) {
-    this.fullName = fullName;
-    this.birthYear = birthYear;
-  },
-};
+    console.log(`Thanks for opening an account ${owner}`);
+  }
 
-const StudentProto = Object.create(PersonProto);
+  deposit(val) {
+    this.movements.push(val);
+  }
 
-StudentProto.init = function (fullName, birthYear, school, level) {
-  PersonProto.init.call(this, fullName, birthYear);
-  this.school = school;
-  this.level = level;
-};
+  withdraw(val) {
+    this.deposit(-val);
+  }
 
-StudentProto.introduce = function () {
-  console.log(
-    `My name is ${this.fullName} and I study at ${this.school} in ${this.level}`
-  );
-};
+  approveLoan(val) {
+    return true;
+  }
 
-const kerfala = Object.create(StudentProto);
-kerfala.init("Kerfala Soumah", 2010, "UFG", "Terminal");
-kerfala.introduce();
-kerfala.calcAge();
+  requestLoan(val) {
+    if (this.approveLoan(val)) {
+      this.deposit(val);
+      console.log("Loan approaved");
+    }
+  }
+}
+
+const acc1 = new Account("Julien", "GNF", 111);
+
+console.log(acc1);
+
+// acc1.movements.push(250);
+// acc1.movements.push(-150);
+acc1.deposit(250);
+acc1.withdraw(150);
+
+acc1.movements.push(250);
+acc1.movements.push(-150);
+
+acc1.requestLoan(1000);
+acc1.approveLoan(1000);
+
+console.log(acc1.pin);
