@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Ecobank - Agence Principale Kaloum",
+    "address": "Place de la République, Kaloum",
+    "coords": {
+      "latitude": 11.645065,
+      "longitude": -14.999226
+    },
+    "type": "agency",
+    "openHours": "08:00 - 17:00"
+  },
+  {
+    "name": "Ecobank - Agence Matam",
+    "address": "Place de la République, Matam",
+    "coords": {
+      "latitude": 10.645065,
+      "longitude": -14.999226
+    },
+    "type": "agency",
+    "openHours": "08:00 - 17:00"
+  },
+  {
+    "name": "PointXpress - Bafatá",
+    "address": "Place de la République, Bafatá",
+    "coords": {
+      "latitude": 10.645065,
+      "longitude": -14.999226
+    },
+    "type": "pointXpress",
+    "openHours": "08:00 - 17:00"
+  },
+  {
+    "name": "PointXpress - Matam",
+    "address": "Place de la République, Matam",
+    "coords": {
+      "latitude": 10.645065,
+      "longitude": -14.999226
+    },
+    "type": "pointXpress",
+    "openHours": "08:00 - 17:00"
+  }
+]
