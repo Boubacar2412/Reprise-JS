@@ -109,27 +109,47 @@ const renderCountry = function (data, className = '') {
 };
 
 // getCountryData('guinea');
-getCountryData('usa');
+// getCountryData('usa');
 
-// Calback hell
-setTimeout(() => {
-  console.log('1 second passed 1rst call');
-  setTimeout(() => {
-    console.log('1 second passed 2nd call');
-    setTimeout(() => {
-      console.log('1 second passed 3rd call');
-      setTimeout(() => {
-        console.log('1 second passed 4rth call');
-        setTimeout(() => {
-          console.log('1 second passed 5 call');
-          setTimeout(() => {
-            console.log('1 second passed 6 call');
-            setTimeout(() => {
-              console.log('1 second passed 7 call');
-            }, 1000);
-          }, 1000);
-        }, 1000);
-      }, 1000);
-    }, 1000);
-  }, 1000);
-}, 1000);
+// // Calback hell
+// setTimeout(() => {
+//   console.log('1 second passed 1rst call');
+//   setTimeout(() => {
+//     console.log('1 second passed 2nd call');
+//     setTimeout(() => {
+//       console.log('1 second passed 3rd call');
+//       setTimeout(() => {
+//         console.log('1 second passed 4rth call');
+//         setTimeout(() => {
+//           console.log('1 second passed 5 call');
+//           setTimeout(() => {
+//             console.log('1 second passed 6 call');
+//             setTimeout(() => {
+//               console.log('1 second passed 7 call');
+//             }, 1000);
+//           }, 1000);
+//         }, 1000);
+//       }, 1000);
+//     }, 1000);
+//   }, 1000);
+// }, 1000);
+
+// const getCountryDataPromise = function (country) {
+//   const request = fetch(`https://restcountries.com/v3.1/name/${country}`);
+
+//   request
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       renderCountry(data);
+//     });
+// };
+
+const getCountryDataPromise = function (country) {
+  fetch(`https://restcountries.com/v3.1/name/${country}`)
+    .then(response => response.json())
+    .then(data => renderCountry(data[0]));
+};
+
+getCountryDataPromise('Guinea');
