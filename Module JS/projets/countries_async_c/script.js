@@ -306,26 +306,41 @@ const getPosition = function () {
 // };
 
 const whereAmIAsync = async function () {
-  const {
-    coords: { latitude: lat, longitude: lng },
-  } = await getPosition();
+  try {
+    const {
+      coords: { latitude: lat, longitude: lng },
+    } = await getPosition();
 
-  const resGeo = await fetch(
-    `https://geocode.xyz/${lat},${lng}?geoit=json&auth=327327185653213256528x96130`
-  );
+    const resGeo = await fetch(
+      `https://geocode.xyz/${lat},${lng}?geoit=json&auth=327327185653213256528x96130`
+    );
 
-  const dataGeo = await resGeo.json();
+    const dataGeo = await resGeo.json();
 
-  const response = await fetch(
-    `https://restcountries.com/v3.1/name/${dataGeo.country}`
-  );
-  const data = await response.json();
+    const response = await fetch(
+      `https://restcountries.com/v3.1/name/${dataGeo.country}`
+    );
+    const data = await response.json();
 
-  renderCountry(data[0]);
+    renderCountry(data[0]);
+  } catch (error) {
+    console.error(`${error.message} 💥`);
+    renderError(error.message);
+  }
 };
 
-// whereAmIAsync('guinea');
+whereAmIAsync();
 
 console.log('First');
 
-btn.addEventListener('click', whereAmIAsync);
+// btn.addEventListener('click', whereAmIAsync);
+
+// try {
+//   let y = 1;
+//   const x = 2;
+//   x = 1;
+// } catch (err) {
+//   console.log(err);
+// }
+
+// console.log('suite du programme');
