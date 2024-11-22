@@ -305,33 +305,54 @@ const getPosition = function () {
 //     .catch(err => console.error(`${err.message} 💥`));
 // };
 
-const whereAmIAsync = async function () {
-  try {
-    const {
-      coords: { latitude: lat, longitude: lng },
-    } = await getPosition();
+// const whereAmIAsync = async function () {
+//   console.log('inside whereAmIAsync : 1');
 
-    const resGeo = await fetch(
-      `https://geocode.xyz/${lat},${lng}?geoit=json&auth=327327185653213256528x96130`
-    );
+//   try {
+//     const {
+//       coords: { latitude: lat, longitude: lng },
+//     } = await getPosition();
+//     console.log('inside whereAmIAsync : 2');
 
-    const dataGeo = await resGeo.json();
+//     const resGeo = await fetch(
+//       `https://geocode.xyz/${lat},${lng}?geoit=json&auth=327327185653213256528x96130`
+//     );
+//     console.log('inside whereAmIAsync : 3');
 
-    const response = await fetch(
-      `https://restcountries.com/v3.1/name/${dataGeo.country}`
-    );
-    const data = await response.json();
+//     const dataGeo = await resGeo.json();
 
-    renderCountry(data[0]);
-  } catch (error) {
-    console.error(`${error.message} 💥`);
-    renderError(error.message);
-  }
-};
+//     const response = await fetch(
+//       `https://restcountries.com/v3.1/namethgbfg/${dataGeo.country}`
+//     );
 
-whereAmIAsync();
+//     console.log(response);
 
-console.log('First');
+//     const data = await response.json();
+//     console.log('inside whereAmIAsync : 4');
+
+//     renderCountry(data[0]);
+
+//     return `You are in ${dataGeo.city}`;
+//   } catch (error) {
+//     console.error(`${error.message} 💥`);
+//     renderError(error.message);
+
+//     //Reject the error
+//     throw error;
+//   }
+// };
+
+// (async function () {
+//   try {
+//     console.log('1 : Will get location');
+//     const data = await whereAmIAsync();
+//     console.log(data);
+//   } catch (error) {
+//     console.error(error);
+//   }
+
+//   console.log('2 : Finish getting location');
+// })();
 
 // btn.addEventListener('click', whereAmIAsync);
 
@@ -344,3 +365,85 @@ console.log('First');
 // }
 
 // console.log('suite du programme');
+
+const getJSON = function (url, errorMsg = 'Someething went wrong') {
+  return fetch(url).then(res => {
+    if (!res.ok) throw new Error(`${errorMsg} (${res.status})`);
+    return res.json();
+  });
+};
+
+const get3Countries = async function (c1, c2, c3) {
+  try {
+    // const [data1] = await getJSON(`https://restcountries.com/v3.1/name/${c1}`);
+    // const [data2] = await getJSON(`https://restcountries.com/v3.1/name/${c2}`);
+    // const [data3] = await getJSON(`https://restcountries.com/v3.1/name/${c3}`);
+
+    const data = await Promise.all([
+      getJSON(`https://restcountries.com/v3.1/name/${c1}`),
+      getJSON(`https://restcountries.com/v3.1/name/${c2}`),
+      getJSON(`https://restcountries.com/v3.1/name/${c3}`),
+    ]);
+
+    console.log(data.map(d => d[0].capital));
+
+    // console.log([data1.capital, data2.capital, data3.capital]);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+// get3Countries('guinea', 'senegal', 'mali');
+
+// Promise.race([])
+
+// (async function () {
+//   const res = await Promise.race([
+//     getJSON(`https://restcountries.com/v3.1/name/guinea`),
+//     getJSON(`https://restcountries.com/v3.1/name/china`),
+//     getJSON(`https://restcountries.com/v3.1/name/nigeria`),
+//   ]);
+
+//   console.log(res[0].name.common);
+// })();
+
+const timeout = function (sec) {
+  return new Promise(function (_, reject) {
+    setTimeout(() => {
+      reject(new Error('Request took too long !'));
+    }, sec);
+  });
+};
+
+// Promise.race([
+//   getJSON(`https://restcountries.com/v3.1/name/guinea`),
+//   timeout(200),
+// ])
+//   .then(res => console.log(res))
+//   .catch(error => console.error(error));
+
+// Promise.allSettled([])
+
+// Promise.allSettled([
+//   Promise.resolve('Success'),
+//   Promise.reject('Error'),
+//   Promise.resolve('Success'),
+// ])
+//   .then(res => console.log(res))
+//   .catch(error => console.error(error));
+
+// Promise.all([
+//   Promise.resolve('Success'),
+//   Promise.reject('Error'),
+//   Promise.resolve('Success'),
+// ])
+//   .then(res => console.log(res))
+//   .catch(error => console.error(error));
+
+// Promise.any([]) // 2021
+
+Promise.any([
+  getJSON(`https://restcountries.com/v3.1/name/guinea`),
+  getJSON(`https://restcountries.com/v3.1/namrgvfgfe/china`),
+  getJSON(`https://restcountries.com/v3.1/name/nigeria`),
+]).then(res => console.log(res));
