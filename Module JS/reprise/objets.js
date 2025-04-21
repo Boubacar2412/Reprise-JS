@@ -41,3 +41,44 @@ let Bouba = new Labe("Diallo", "Boubacar",22);
 
 alert("je suis " + Bouba.nom + " "+ Bouba.prenom + " "+ " agé de "+ Bouba.age + " "+ "ans");
 
+
+// Avec le mot clé new
+
+let maman = new Object();
+maman.nom = "Diallo";
+maman.prenom = "Mamadou Hawa";
+maman.presentation = function (){
+    alert("ma mère s'appelle" + " "+ this.nom + " "+ this.prenom);
+
+
+}
+
+
+alert(maman.presentation());
+
+
+
+// Avec un objet litteral 
+
+let mum = {
+    nom : "bah",
+    prenom : "Mamadou",
+    presentation : function (){
+        alert("ma mère s'appelle" + " "+ this.nom + " "+ this.prenom);
+}
+}
+
+alert(mum.presentation());
+
+
+// Avec fonction constructrice 
+
+function nene(n,p){
+    this.nom = n;
+    this.prenom = p;
+
+}
+
+let biro = new nene("Sow","Hawa");
+
+alert("ma mère s'appelle" + " "+ biro.nom + " "+ biro.prenom);
