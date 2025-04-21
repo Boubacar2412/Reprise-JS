@@ -31,13 +31,13 @@ alert(moi.id());
 
 // création d'ojets avec une fonction constructrice
 
-function Personne(n,p,a){
+function Labe(n,p,a){
     this.prenom = p;
     this.nom = n;
     this.age = a;
 }
 
-let Bouba = new Personne("Diallo", "Boubacar",22);
+let Bouba = new Labe("Diallo", "Boubacar",22);
 
 alert("je suis " + Bouba.nom + " "+ Bouba.prenom + " "+ " agé de "+ Bouba.age + " "+ "ans");
 
