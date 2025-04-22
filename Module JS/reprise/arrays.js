@@ -19,3 +19,13 @@ for(var i=0; i<tab1.length; i++){
 }
 alert(p);
 
+// les méthodes de l'objet Array
+
+let ajout = tab.push("valeurAjouter");
+
+alert(ajout);
+
+let sup = tab.pop();
+alert(sup);
+
+
