@@ -82,3 +82,19 @@ function nene(n,p){
 let biro = new nene("Sow","Hawa");
 
 alert("ma mère s'appelle" + " "+ biro.nom + " "+ biro.prenom);
+
+// parcourir un objet littéral avec la boucle for...in 
+
+
+let bouba = {
+    nom : "diallo",
+    prenom : "boubacar",
+    age : 22
+}
+
+let p = " ";
+for(let clefs in bouba){
+    p+= clefs + " : " + bouba.clefs + "\n";
+}
+
+alert(p);
