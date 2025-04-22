@@ -94,7 +94,7 @@ let bouba = {
 
 let p = " ";
 for(let clefs in bouba){
-    p+= clefs + " : " + bouba.clefs + "\n";
+    p+= clefs + " : " + bouba[clefs]+ "\n";
 }
 
 alert(p);
