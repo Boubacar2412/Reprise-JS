@@ -19,3 +19,12 @@ alert(dat);
 let dat1 = new Date("2025-04-23");
 
 alert(dat1);
+
+
+// methodes de l'objet date
+
+let nbmill = dat.getTime;
+
+let year = dat.setFullYear(2030);
+alert(dat);
+
