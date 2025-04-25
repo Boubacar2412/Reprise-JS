@@ -1,15 +1,15 @@
-
 /*
 Le DOM (Document Object Model) est une interface de 
 programmation qui permet aux langages comme JavaScript
- d'accéder et de manipuler les éléments HTML et CSS d'une page web. 
- Lorsqu'une page est chargée, le navigateur crée automatiquement 
- un objet appelé document qui représente toute la structure de la page.
-  Grâce à cet objet, on peut utiliser différentes méthodes et propriétés
-   JavaScript pour rendre la page dynamique : modifier du texte, ajouter ou supprimer des éléments, 
-   changer des styles, réagir à des événements, etc.
+d'accéder et de manipuler les éléments HTML et CSS d'une page web. 
+Lorsqu'une page est chargée, le navigateur crée automatiquement 
+un objet appelé document qui représente toute la structure de la page.
+Grâce à cet objet, on peut utiliser différentes méthodes et propriétés
+JavaScript pour rendre la page dynamique : modifier du texte, ajouter ou supprimer des éléments, 
+changer des styles, réagir à des événements, etc.
 */
 
+// --- RÉCUPÉRATION DES ÉLÉMENTS HTML ---
 
 // 1. Par ID
 let titre = document.getElementById("titre");
@@ -34,60 +34,64 @@ console.log("querySelectorAll (nombre) :", tousLesTextes.length);
 let zone = document.getElementsByName("zone")[0];
 console.log("Par name :", zone.textContent);
 
-// récupérer le contenu textuel
+// --- MODIFICATIONS D'ÉLÉMENTS ---
 
-let contenir = document.getElementById("titre").textContent += "et suis beau";
-alert(contenir);
+// Ajouter du texte à un élément
+titre.textContent += " et suis beau";
+alert(titre.textContent);
 
-// modification du contenu d'un élément HTML
-
-let mod = document.getElementById("titre").style.color = "red";
-
-// 1. Modifier le texte d'un élément
-let titre1 = document.getElementById("titre");
-titre1.textContent = "Bienvenue sur le DOM !";
-
-// 2. Modifier le style d’un élément
+// Modifier le style
 titre.style.color = "blue";
 titre.style.textTransform = "uppercase";
 
-// 3. Modifier le texte du deuxième paragraphe
-let paragraphes = document.getElementsByClassName("texte");
-paragraphes[1].textContent = "Paragraphe modifié par JS";
+// Modifier le texte d’un paragraphe
+textes[1].textContent = "Paragraphe modifié par JS";
 
+// --- CRÉATION ET INSERTION D'ÉLÉMENTS HTML ---
 
+// 1. Ajouter un paragraphe à la fin du body
+let paragrapheAjoute = document.createElement("p");
+paragrapheAjoute.textContent = "Je suis un paragraphe ajouté dynamiquement.";
+document.body.appendChild(paragrapheAjoute);
 
-// Création et Insertion des éléments HTML en JS
-
-// 1. Créer un nouveau paragraphe et l'ajouter à la fin du body
-let nouveauParagraphe = document.createElement("p");
-nouveauParagraphe.textContent = "Je suis un paragraphe ajouté dynamiquement.";
-document.body.appendChild(nouveauParagraphe);
-
-// 2. Créer un nouvel élément <li> et l'ajouter à la liste
+// 2. Ajouter un <li> à la fin de la liste
 let nouvelleListe = document.querySelector("ul");
-let nouvelElement = document.createElement("li");
-nouvelElement.textContent = "Élément 3 ajouté avec JS";
-nouvelleListe.appendChild(nouvelElement);
+let liAjoute = document.createElement("li");
+liAjoute.textContent = "Élément 3 ajouté avec JS";
+nouvelleListe.appendChild(liAjoute);
 
-// 3. Créer un sous-titre <h2> avant la liste
+// 3. Ajouter un sous-titre <h2> avant la liste
 let sousTitre = document.createElement("h2");
 sousTitre.textContent = "Liste modifiée :";
 document.body.insertBefore(sousTitre, nouvelleListe);
 
-// 4. Créer un bouton et l’ajouter
+// 4. Créer un bouton pour ajouter des messages
 let bouton = document.createElement("button");
 bouton.textContent = "Ajouter un message";
 document.body.appendChild(bouton);
 
-// 5. Zone d’insertion pour les messages
+// 5. Zone pour insérer les messages
 let zoneMessage = document.createElement("div");
 document.body.appendChild(zoneMessage);
 
-// 6. Ajouter un événement au clic sur le bouton
+// 6. Événement clic sur le bouton
 bouton.addEventListener("click", function () {
   let msg = document.createElement("p");
   msg.textContent = "Message ajouté en cliquant !";
   zoneMessage.appendChild(msg);
 });
 
+// --- insertBefore() : insérer un élément avant un autre ---
+
+// 1. Insérer un <li> avant "Élément 2"
+let liInsereAvant = document.createElement("li");
+liInsereAvant.textContent = "Élément inséré avant Élément 2";
+let referenceLi = nouvelleListe.children[1]; // Élément 2
+nouvelleListe.insertBefore(liInsereAvant, referenceLi);
+
+// 2. Insérer un paragraphe avant la div[name="zone"]
+let paragrapheAvantZone = document.createElement("p");
+paragrapheAvantZone.textContent = "Paragraphe inséré avant la zone nommée.";
+let referenceZone = document.getElementsByName("zone")[0];
+let parentZone = referenceZone.parentNode;
+parentZone.insertBefore(paragrapheAvantZone, referenceZone);
