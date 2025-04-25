@@ -11,12 +11,26 @@ programmation qui permet aux langages comme JavaScript
 */
 
 
-// les méthodes de l'obejet "Document"
-let titre = document.getElementById("gros_titre");
+// 1. Par ID
+let titre = document.getElementById("titre");
+console.log("Par ID :", titre.textContent);
 
-alert(titre);
+// 2. Par balise
+let listes = document.getElementsByTagName("li");
+console.log("Par balise :", listes[0].textContent);
 
-let nb_tab = document.getElementsByTagName("h1");
+// 3. Par classe
+let textes = document.getElementsByClassName("texte");
+console.log("Par classe :", textes[1].textContent);
 
-alert("le nombre de paragraphe est : " + nb_tab.length);
+// 4. Par sélecteur CSS
+let premierTexte = document.querySelector(".texte");
+console.log("querySelector :", premierTexte.textContent);
+
+let tousLesTextes = document.querySelectorAll(".texte");
+console.log("querySelectorAll (nombre) :", tousLesTextes.length);
+
+// 5. Par attribut name
+let zone = document.getElementsByName("zone")[0];
+console.log("Par name :", zone.textContent);
 
