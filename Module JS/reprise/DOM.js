@@ -78,7 +78,7 @@ document.body.appendChild(zoneMessage);
 bouton.addEventListener("click", function () {
   let msg = document.createElement("p");
   msg.textContent = "Message ajouté en cliquant !";
-  zoneMessage.appendChild(msg);
+  zoneMessage.appendChild(msg); 
 });
 
 // --- insertBefore() : insérer un élément avant un autre ---
@@ -95,3 +95,26 @@ paragrapheAvantZone.textContent = "Paragraphe inséré avant la zone nommée.";
 let referenceZone = document.getElementsByName("zone")[0];
 let parentZone = referenceZone.parentNode;
 parentZone.insertBefore(paragrapheAvantZone, referenceZone);
+
+// --- SUPPRESSION D'ÉLÉMENTS AVEC remove() ---
+
+// Supprimer le premier paragraphe avec la classe "texte"
+let paragrapheASupprimer = document.querySelector(".texte");
+if (paragrapheASupprimer) {
+  paragrapheASupprimer.remove();
+}
+
+// --- REMPLACEMENT D'ÉLÉMENTS AVEC replaceChild() ---
+
+// 1. Créer un nouveau titre <h1>
+let nouveauTitre = document.createElement("h1");
+nouveauTitre.textContent = "Titre remplacé dynamiquement !";
+
+// 2. Sélectionner l’ancien titre à remplacer
+let ancienTitre = document.getElementById("titre");
+
+// 3. Remplacer l’ancien titre par le nouveau
+if (ancienTitre && ancienTitre.parentNode) {
+  ancienTitre.parentNode.replaceChild(nouveauTitre, ancienTitre);
+}
+
