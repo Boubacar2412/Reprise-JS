@@ -9,3 +9,14 @@ programmation qui permet aux langages comme JavaScript
    JavaScript pour rendre la page dynamique : modifier du texte, ajouter ou supprimer des éléments, 
    changer des styles, réagir à des événements, etc.
 */
+
+
+// les méthodes de l'obejet "Document"
+let titre = document.getElementById("gros_titre");
+
+alert(titre);
+
+let nb_tab = document.getElementsByTagName("h1");
+
+alert("le nombre de paragraphe est : " + nb_tab.length);
+
