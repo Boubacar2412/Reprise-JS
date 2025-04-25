@@ -54,3 +54,6 @@ titre.style.textTransform = "uppercase";
 // 3. Modifier le texte du deuxième paragraphe
 let paragraphes = document.getElementsByClassName("texte");
 paragraphes[1].textContent = "Paragraphe modifié par JS";
+
+
+
