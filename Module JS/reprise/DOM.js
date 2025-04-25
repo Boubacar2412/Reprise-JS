@@ -34,3 +34,23 @@ console.log("querySelectorAll (nombre) :", tousLesTextes.length);
 let zone = document.getElementsByName("zone")[0];
 console.log("Par name :", zone.textContent);
 
+// récupérer le contenu textuel
+
+let contenir = document.getElementById("titre").textContent += "et suis beau";
+alert(contenir);
+
+// modification du contenu d'un élément HTML
+
+let mod = document.getElementById("titre").style.color = "red";
+
+// 1. Modifier le texte d'un élément
+let titre1 = document.getElementById("titre");
+titre1.textContent = "Bienvenue sur le DOM !";
+
+// 2. Modifier le style d’un élément
+titre.style.color = "blue";
+titre.style.textTransform = "uppercase";
+
+// 3. Modifier le texte du deuxième paragraphe
+let paragraphes = document.getElementsByClassName("texte");
+paragraphes[1].textContent = "Paragraphe modifié par JS";
