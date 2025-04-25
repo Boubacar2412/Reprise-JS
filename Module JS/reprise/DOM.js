@@ -57,3 +57,37 @@ paragraphes[1].textContent = "Paragraphe modifié par JS";
 
 
 
+// Création et Insertion des éléments HTML en JS
+
+// 1. Créer un nouveau paragraphe et l'ajouter à la fin du body
+let nouveauParagraphe = document.createElement("p");
+nouveauParagraphe.textContent = "Je suis un paragraphe ajouté dynamiquement.";
+document.body.appendChild(nouveauParagraphe);
+
+// 2. Créer un nouvel élément <li> et l'ajouter à la liste
+let nouvelleListe = document.querySelector("ul");
+let nouvelElement = document.createElement("li");
+nouvelElement.textContent = "Élément 3 ajouté avec JS";
+nouvelleListe.appendChild(nouvelElement);
+
+// 3. Créer un sous-titre <h2> avant la liste
+let sousTitre = document.createElement("h2");
+sousTitre.textContent = "Liste modifiée :";
+document.body.insertBefore(sousTitre, nouvelleListe);
+
+// 4. Créer un bouton et l’ajouter
+let bouton = document.createElement("button");
+bouton.textContent = "Ajouter un message";
+document.body.appendChild(bouton);
+
+// 5. Zone d’insertion pour les messages
+let zoneMessage = document.createElement("div");
+document.body.appendChild(zoneMessage);
+
+// 6. Ajouter un événement au clic sur le bouton
+bouton.addEventListener("click", function () {
+  let msg = document.createElement("p");
+  msg.textContent = "Message ajouté en cliquant !";
+  zoneMessage.appendChild(msg);
+});
+
